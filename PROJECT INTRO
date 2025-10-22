@@ -330,3 +330,26 @@ Background noise / Speech recognition errors – Sometimes the assistant couldn�
 Opening applications with correct paths – For example, opening Chrome requires the exact file path (os.startfile(path_to_chrome)), and VS Code works only if added to the system PATH (os.system('code')). Ensuring these commands worked consistently was tricky.
 
 Internet-dependent functions – Commands like playing YouTube videos or fetching Wikipedia summaries need an internet connection. Network issues could cause failures, so I handled them using exception handling for sr.RequestError.”
+
+Question: How did you handle exception handling in your project?
+
+Answer:
+
+“I handled exceptions in two main places:
+
+Speech recognition errors – Sometimes the assistant couldn’t understand what I said. I used a try-except block around listener.recognize_google(voice):
+
+except sr.UnknownValueError:
+    talk("Sorry bro, I didn’t catch that.")
+
+
+This catches unclear speech and lets the assistant respond politely instead of crashing.
+2. Network issues – If there was a problem with Google’s service, I caught sr.RequestError:
+
+except sr.RequestError:
+    talk("Network issue with Google service.")
+
+
+This ensures the assistant informs the user about network problems without stopping the program.
+
+Overall, exception handling keeps the assistant stable and user-friendly, even if speech recognition fails or internet is unavailable.”
