@@ -1,0 +1,24 @@
+“My project is Python Voice Assistant.
+It is a Python-based desktop assistant that interacts with the user using voice commands.
+The assistant can perform tasks like playing YouTube videos, telling the current time, fetching information from Wikipedia, opening applications like Chrome and VS Code, and telling programming jokes.
+
+I built it using Python libraries and modules:
+
+speech_recognition – converts voice into text
+
+pyttsx3 – converts text into speech
+
+pywhatkit – plays YouTube videos automatically
+
+wikipedia – fetches summaries from Wikipedia
+
+pyjokes – tells programming jokes
+
+datetime – gets the current time
+
+os & sys – built-in modules to open applications and exit the program
+
+The assistant works step by step: it listens to the user’s voice, converts it into text, checks which command it matches, executes the task, and responds using voice.
+It continuously listens until the user says ‘exit’ or ‘stop’.
+
+Overall, this project helped to learn real-time voice interaction, Python automation, and handling multiple libraries together.”
