@@ -353,3 +353,30 @@ except sr.RequestError:
 This ensures the assistant informs the user about network problems without stopping the program.
 
 Overall, exception handling keeps the assistant stable and user-friendly, even if speech recognition fails or internet is unavailable.”
+
+
+Question: What is venv?
+
+Answer:
+
+“venv stands for virtual environment in Python. It creates an isolated environment for a project so that the libraries and dependencies installed for this project don’t affect other projects or the system Python.
+For example, I used venv to install speech_recognition, pyttsx3, and other libraries without interfering with my global Python setup.”
+
+Question: What technologies did you use?
+
+Answer:
+
+“The project is built using Python as the main programming language.
+Key technologies include:
+
+Speech Recognition – for real-time voice input.
+
+Text-to-Speech – converting text responses to voice output.
+
+YouTube and Wikipedia APIs – for playing videos and fetching information.
+
+Python automation modules – like os and sys for opening applications and exiting the program.
+
+Virtual Environment (venv) – to manage dependencies cleanly.
+
+Overall, it combines voice interaction, real-time automation, and Python libraries to build a functional desktop assistant.”
