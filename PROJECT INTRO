@@ -317,3 +317,16 @@ Using a while True: loop that repeatedly calls the function to take commands and
 Overall, what did you learn from this project?
 
 Learned real-time voice interaction, Python automation, using multiple libraries together, handling exceptions, and integrating system commands.
+
+
+Question: What challenges did you face while building the project?
+
+Answer:
+
+“Three main challenges I faced were:
+
+Background noise / Speech recognition errors – Sometimes the assistant couldn’t understand my voice properly. I solved this using listener.adjust_for_ambient_noise(source) and exception handling for sr.UnknownValueError.
+
+Opening applications with correct paths – For example, opening Chrome requires the exact file path (os.startfile(path_to_chrome)), and VS Code works only if added to the system PATH (os.system('code')). Ensuring these commands worked consistently was tricky.
+
+Internet-dependent functions – Commands like playing YouTube videos or fetching Wikipedia summaries need an internet connection. Network issues could cause failures, so I handled them using exception handling for sr.RequestError.”
