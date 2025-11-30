@@ -44,6 +44,7 @@ Overall, this project helped to learn real-time voice interaction, Python automa
 5️⃣ How does pywhatkit play YouTube videos automatically?
 
 “When I say a command like ‘play Nani songs’, the assistant sends the song name to pywhatkit.playonyt(), which automatically opens the browser and plays the video on YouTube.”
+playonyt() is a function in the pywhatkit Python library that plays YouTube videos automatically.
 
 6️⃣ How do you fetch Wikipedia summaries?
 
@@ -52,6 +53,7 @@ Overall, this project helped to learn real-time voice interaction, Python automa
 7️⃣ How do you open Chrome or VS Code from Python?
 
 “I use the os module to open applications. For example, os.startfile() opens Chrome if the path exists, and os.system('code') opens VS Code. The sys module is used to exit the program when I say ‘stop’ or ‘exit’.”
+code = VS Code’s terminal command that launches the Visual Studio Code editor.
 
 8️⃣ How does the continuous listening loop work?
 
@@ -337,7 +339,7 @@ Answer:
 
 “I handled exceptions in two main places:
 
-Speech recognition errors – Sometimes the assistant couldn’t understand what I said. I used a try-except block around listener.recognize_google(voice):
+Speech recognition errors – Sometimes the assistant couldn’t understand what I said. I used a try-except block ar ound listener.recognize_google(voice):
 
 except sr.UnknownValueError:
     talk("Sorry bro, I didn’t catch that.")
