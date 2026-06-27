@@ -1,0 +1,911 @@
+1.WHAT IS PYTHON?
+Python is a high-level, interpreted,general-purpose programming language.It is easy to read and writebecause of its simple syntax.Python supports multiple programming paradigms,
+such as object-oriented,procedural, and functional programming.It is widely used inweb development,data science,artificial intelligence,automation,scripting,
+and software development.
+
+2. What is meant by a high-level language?
+
+A high-level language is easy for humans to understand.
+It uses simple and readable English-like syntax.
+It hides complex hardware and machine-level details.
+Programmers focus on solving problems, not hardware.
+A compiler or interpreter translates it.
+Python, Java, and C++ are examples.
+
+3.# What is meant by a high-level language?
+
+A high-level language is easy for humans to understand.
+It uses simple and readable English-like syntax.
+It hides complex hardware and machine-level details.
+Programmers focus on solving problems, not hardware.
+A compiler or interpreter translates it.
+Python, Java, and C++ are examples.
+
+4.# What is an interpreted language?
+
+An interpreted language executes code line by line.
+It does not compile entire program first.
+An interpreter translates and executes each statement.
+
+# How does Python execute a program?
+
+Python source code is written in `.py` files.
+The Python compiler checks source code syntax.
+It converts source code into bytecode.
+Bytecode is stored as `.pyc` files.
+Python Virtual Machine loads the bytecode.
+The interpreter executes bytecode instruction by instruction.
+The program produces the required output.
+
+## Execution Flow
+
+```text
+Source Code (.py)
+        │
+        ▼
+Python Compiler
+        │
+        ▼
+Bytecode (.pyc)
+        │
+        ▼
+Python Virtual Machine (PVM)
+        │
+        ▼
+Interpreter
+        │
+        ▼
+Output
+```
+
+5.# What are the advantages and disadvantages of Python?
+Python has simple and readable syntax.
+Python is easy to learn.
+Python supports rapid application development.
+Python is platform independent.
+Python has a large standard library.
+DISADVANTAGES
+Python has slower execution speed.
+Python consumes more memory.
+Python is unsuitable for mobile development.
+Python is less suitable for game development.
+Python has runtime type errors.
+
+6.# Who developed Python?
+
+Python was developed by Guido van Rossum.
+He created Python in 1989.
+Python was first released in 1991.
+
+# How is Python different from other programming languages?
+
+Python has simple and readable syntax.
+Python requires fewer lines of code.
+Python is an interpreted language.
+Python is dynamically typed.
+Python supports multiple programming paradigms.
+Python has a large standard library.
+
+# What is PEP 8?
+
+PEP 8 is Python's official style guide.
+It provides coding style recommendations.
+It improves code readability and consistency.
+It helps developers write clean Python code.
+
+What are Python modules? 
+Python modules are files containing Python code that define functions, classes, and 
+variables. They allow code reuse and organization, making it easier to manage and maintain 
+larger projects.
+
+What is a Python package? 
+A Python package is a way to organize related modules into a directory hierarchy. It allows 
+for a logical grouping of modules, making it easier to manage and distribute code
+
+How do you comment in Python? 
+Comments in Python are denoted by the # character. Anything after the # is considered a 
+comment and is ignored by the Python interpreter
+
+comment and is ignored by the Python interpreter.
+8. What are Python data types? 
+Python supports various data types, including integers, floating-point numbers, strings, 
+lists, tuples, dictionaries, and booleans. Each data type has its own characteristics and uses
+
+# What is string interpolation in Python?
+
+String interpolation inserts values into a string.
+It creates dynamic and readable strings.
+Python supports f-strings for interpolation.
+
+# What is the difference between range() and xrange() in Python 2?
+
+`range()` returns a complete list.
+It consumes more memory.
+`xrange()` returns values one by one.
+It consumes less memory.
+`xrange()` is faster for large loops.
+Python 3 removed `xrange()`.
+Python 3 `range()` behaves like `xrange()`.
+
+. What are Python functions? 
+Python functions are reusable blocks of code that perform a specific task. They help in code 
+organization, reusability, and modularity. Functions can accept arguments and return values.
+
+What is the difference between a function and a method in Python? 
+In Python, a function is a standalone block of code that can be called independently. A 
+method, on the other hand, is a function that is associated with an object or a class and can 
+access the object's data
+
+17. What is the __init__ method used for? 
+The __init__ method is a special method in Python classes that is automatically called when 
+an object is created from the class. It is used to initialize the object's attributes and perform 
+setup tasks
+
+18. What is object-oriented programming (OOP)? 
+Object-oriented programming (OOP) is a programming paradigm that organizes code into 
+objects, which are instances of classes. It emphasizes encapsulation, inheritance, and 
+polymorphism
+
+19. What are Python classes and objects? 
+In Python, a class is a blueprint that defines the properties and behaviors of objects. An 
+object is an instance of a class. It represents a specific entity and can interact with other 
+objects.
+
+0. How do you create an object in Python? 
+An object is created by calling the class as if it were a function. The class acts as a 
+constructor, initializing the object and returning it
+
+28. What is a lambda function in Python? 
+A lambda function is an anonymous function in Python that is defined using the lambda 
+keyword. It is a shorthand way to create small, one-line functions without explicitly defining 
+a function using def
+
+31. What is a virtual environment in Python? 
+A virtual environment in Python is a self-contained directory that contains a specific version 
+of Python interpreter and installed packages. It allows you to isolate Python environments 
+for different projects and manage their dependencies.
+
+# What are exceptions in Python?
+
+Exceptions are runtime errors in Python.
+They occur during program execution.
+They stop normal program flow.
+Python handles them using try-except blocks.
+They help prevent program crashes.
+
+## Example
+
+```python
+try:
+    print(10 / 0)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+33. What is error handling in Python? 
+Error handling in Python involves using try-except blocks to catch and handle exceptions 
+that may occur during the execution of the code. It allows for graceful recovery from errors 
+and prevents the program from crashing.
+
+4. What is the purpose of the try-except-else-finally block in Python? 
+The try-except-else-finally block in Python is used for exception handling. The try block 
+contains the code that may raise an exception. The except block is used to handle specific 
+exceptions. The else block is executed if no exceptions occur. The finally block is always 
+executed, regardless of whether an exception occurred or not.
+35. What are the built-in data structures in Python? 
+Python provides several built-in data structures, including lists, tuples, dictionaries, sets, 
+and strings. These data structures offer different ways to store, manipulate, and retrieve 
+data
+
+42. How do you format strings in Python? 
+Strings can be formatted in Python using the % operator, the str.format() method, or f
+strings (formatted string literals). These methods allow you to insert values into 
+placeholders within a string
+
+# What are file handling operations in Python?
+
+File handling is working with files in Python.
+It allows reading and writing data in files.
+It helps store data permanently.
+
+## Common file operations
+
+Opening a file using open() function.
+Reading data using read() method.
+Writing data using write() method.
+Appending data using append mode.
+Closing file using close() method.
+
+## File modes
+
+"r" is used for reading files.
+"w" is used for writing files.
+"a" is used for appending data.
+
+44. How do you open and close a file in Python? 
+Files can be opened in Python using the open() function, which takes the file name and the 
+mode of operation as arguments. The close() method is used to close an opened file and free 
+up system resources.
+
+ What are the different file modes in Python?
+The different file modes in Python include "r" for reading, "w" for writing (overwriting 
+existing content), "a" for appending, "x" for exclusive creation (fails if the file already exists), 
+and "b" for binary mode.
+
+6. What is exception handling in file operations? 
+Exception handling in file operations involves handling potential errors that may occur while 
+performing file-related operations. This ensures that the program handles file-related 
+exceptions gracefully and avoids crashes or data loss
+
+# What is a generator function in Python?
+
+A generator function returns an iterator.
+It uses the yield keyword instead of return.
+It generates values one at a time.
+It does not store all values in memory.
+It is memory efficient for large data.
+
+# What is a list comprehension in Python?
+
+List comprehension is a short way to create lists.
+It makes code shorter and faster.
+It is used to build new lists from existing ones.
+It uses a single line syntax.
+
+## Example
+
+```python
+numbers = [1, 2, 3, 4]
+squares = [x * x for x in numbers]
+print(squares)
+```
+
+0. What is the pass statement in Python? 
+The pass statement in Python is a placeholder statement that does nothing. It is used as a 
+syntactic placeholder when a statement is required by the Python syntax, but no action is 
+needed
+
+# What is the purpose of the self parameter in Python?
+
+self refers to the current object instance.
+It is used inside class methods.
+It allows access to object attributes.
+It allows calling other methods of the object.
+It must be the first parameter in methods.
+
+52. What is the difference between a shallow copy and a deep copy in Python? 
+In Python, a shallow copy creates a new object that references the original data, while a 
+deep copy creates a new object with completely independent copies of the original data. 
+Modifying the original data does not affect the deep copy, but it can affect the shallow copy.
+
+53. What are the advantages of using Python for web development? 
+Python offers several advantages for web development, including a wide range of 
+frameworks (such as Django and Flask), a large community, extensive libraries, and easy 
+integration with other technologies
+
+# What is the Global Interpreter Lock (GIL) in Python?
+
+GIL is a lock in Python interpreter.
+It allows only one thread to execute Python code.
+It prevents multiple threads running Python bytecode simultaneously.
+It exists in CPython implementation.
+It simplifies memory management and thread safety.
+
+55. What is a metaclass in Python? 
+A metaclass in Python is a class that defines the behavior and structure of other classes. It 
+allows you to customize class creation, modify attributes, and add additional functionality to 
+classes
+
+. How do you handle file I/O errors in Python? 
+File I/O errors in Python can be handled using exception handling. By using try-except 
+blocks around file-related operations, you can catch specific exceptions like 
+FileNotFoundError or PermissionError and handle them gracefully
+
+58. What is the difference between a shallow comparison and a deep comparison in Python? 
+In Python, a shallow comparison checks if two objects have the same memory address, 
+while a deep comparison checks if the objects have the same values. Shallow comparisons 
+can be done using the is operator, while deep comparisons are typically done using the == 
+operator.
+
+# What is the purpose of __str__ method in Python?
+
+__str__ method returns readable object representation.
+It is used for printing object information.
+It is called by print() function.
+It improves output readability for objects.
+It must return a string value.
+
+## Example
+
+```python
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+s1 = Student("Sathwik")
+print(s1)
+```
+# What is the purpose of __repr__ method in Python?
+
+__repr__ returns official string representation of object.
+It is used for debugging purposes.
+It should show unambiguous object information.
+It is mainly used by developers.
+It is called in interactive console.
+64. What is the purpose of the super() function in Python? 
+The super() function in Python is used to call a method in a superclass or parent class. It is 
+often used in method overriding to invoke the superclass's implementation of the method 
+before adding additional functionality in the subclass
+
+70. What is the purpose of the @property decorator in Python?
+ IT IS USED TO ACCES METHOD LIKE A VARIABLE
+
+# What is the purpose of @staticmethod decorator in Python?
+
+@staticmethod defines a method inside a class.
+It does not use self parameter.
+It does not use class or object data.
+It behaves like a normal function.
+It is grouped inside class for organization.
+
+## Example
+
+```python
+class Math:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+print(Math.add(10, 20))
+
+# What is the purpose of __call__ method in Python?
+
+__call__ makes object callable like function.
+It allows object to be used as function.
+It is triggered when object is called.
+It helps make flexible and reusable objects.
+
+## Example
+
+```python
+class Demo:
+    def __call__(self, name):
+        print("Hello", name)
+
+d = Demo()
+d("Sathwik")
+```
+
+## Easy meaning
+
+Object behaves like a function.
+We can call object using parentheses.
+
+# What is the purpose of *args and **kwargs in Python?
+
+*args is used for multiple positional arguments.
+It allows passing variable number of values.
+**kwargs is used for keyword arguments.
+It allows passing key-value pairs dynamically.
+They make functions flexible and reusable.
+
+## Example
+
+```python
+def demo(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+demo(1, 2, 3, name="Sathwik", age=22)
+```
+
+## Easy meaning
+
+*args → multiple values.
+**kwargs → multiple key-value pairs.
+
+# What are decorators in Python?
+
+Decorators are functions that modify other functions.
+They add extra features without changing code.
+They wrap another function inside a function.
+They are used to extend functionality.
+
+## Simple idea
+
+Decorator = function that enhances another function.
+
+## Example
+
+```python
+def decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@decorator
+def hello():
+    print("Hello")
+
+hello()
+```
+
+## Easy meaning
+
+Decorators add extra behavior to functions.
+
+# What is the purpose of sys module in Python?
+
+sys module provides system related functions.
+It interacts with Python interpreter.
+It gives access to system parameters.
+It handles command line arguments.
+It controls Python runtime environment.
+
+2. What is the purpose of the os module in Python? 
+The os module in Python provides a way to interact with the operating system. It allows 
+performing various operations related to file and directory manipulation, process 
+management, and environment variables.
+
+99. What is the purpose of the yield keyword in Python? 
+The yield keyword in Python is used in the context of generators. It allows a generator 
+function to temporarily pause and yield a value to the caller, without losing its internal state. 
+The generator can then be resumed to continue execution from where it left off
+
+# What is the purpose of zip() function in Python?
+
+zip() combines multiple iterables together.
+It pairs elements from each iterable.
+It returns an iterator of tuples.
+It stops at shortest iterable length.
+
+## Example
+
+```python
+names = ["A", "B", "C"]
+marks = [90, 80, 70]
+
+result = zip(names, marks)
+
+print(list(result))
+```
+
+## Output
+
+```python
+[('A', 90), ('B', 80), ('C', 70)]
+```
+
+# Real-time example of for loop and while loop in Python
+
+## For loop real-time example
+
+For loop is used when we know fixed items.
+
+Example: Sending messages to contacts.
+
+```python
+contacts = ["A", "B", "C"]
+
+for person in contacts:
+    print("Message sent to", person)
+```
+
+## Real meaning
+
+We already know list of contacts.
+Loop goes one by one automatically.
+
+---
+
+## While loop real-time example
+
+While loop is used when condition is unknown.
+
+Example: ATM machine until correct PIN.
+
+```python
+pin = 1234
+user_pin = 0
+
+while user_pin != pin:
+    user_pin = int(input("Enter PIN: "))
+```
+
+## Real meaning
+
+We don’t know how many attempts needed.
+Loop runs until correct condition is met.
+# Real-time example of String, Array, and List
+
+## String real-time example
+
+String is used for text data.
+Example: user name, email, messages.
+
+```python
+name = "Sathwik"
+print("Welcome", name)
+```
+
+## Real meaning
+
+Strings store text information in apps.
+Used in login, chat, forms.
+
+---
+
+## Array real-time example
+
+Array stores same type of data.
+Used in fixed structured data.
+
+Example: storing marks in exams.
+
+```python
+import array
+
+marks = array.array('i', [90, 80, 70])
+print(marks)
+```
+
+## Real meaning
+
+Arrays store similar type values.
+Used in low-level memory operations.
+
+---
+
+## List real-time example
+
+List stores multiple types of data.
+Used in real applications.
+
+Example: shopping cart items.
+
+```python
+cart = ["book", "pen", 100]
+print(cart)
+```
+
+## Real meaning
+
+Lists are flexible and widely used.
+Used in web apps and Python projects.
+
+# Difference between sort() and sorted() in Python
+
+sort() modifies the original list.
+It works only on lists.
+It returns None after sorting.
+It changes data in-place.
+
+sorted() returns a new sorted list.
+It works on any iterable.
+It does not change original data.
+It returns a new object.
+
+## Example
+
+```python
+nums = [3, 1, 2]
+
+nums.sort()
+print(nums)
+
+nums = [3, 1, 2]
+new_nums = sorted(nums)
+print(new_nums)
+print(nums)
+```
+
+## Easy meaning
+
+sort() changes original list.
+sorted() creates new list.
+
+# Difference between function and recursion
+
+Function is a block of reusable code.
+It executes when it is called.
+It improves code reusability.
+It can be called multiple times.
+
+Recursion is a function calling itself.
+It solves problem in smaller steps.
+It must have a base condition.
+Without base case, it runs forever.
+
+## Example Function
+
+```python
+def add(a, b):
+    return a + b
+
+print(add(2, 3))
+```
+
+## Example Recursion
+
+```python
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n-1)
+
+print(fact(5))
+```
+
+## Easy meaning
+
+Function = normal reusable code block.
+Recursion = function calling itself.
+
+# Difference between Python and Java
+
+Python is simple and easy language.
+It has less and readable code.
+It is interpreted language.
+It supports dynamic typing.
+It is slower in execution.
+
+Java is strict and structured language.
+It requires more lines of code.
+It is compiled language.
+It supports static typing.
+It is faster than Python.
+
+## Example
+
+Python code:
+```python
+print("Hello")
+```
+
+Java code:
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}
+```
+
+## Easy meaning
+
+Python is simple and flexible.
+Java is strict and powerful.
+
+# What is static typing and dynamic typing?
+
+Static typing means data type is fixed.
+Type is checked before program runs.
+Example: Java, C, C++.
+
+Dynamic typing means type is not fixed.
+Type is decided during execution.
+Python supports dynamic typing.
+
+## Static typing example
+
+```java
+int x = 10;
+```
+
+## Dynamic typing example
+
+```python
+x = 10
+x = "Hello"
+```
+
+## Easy meaning
+
+Static typing = fixed data type.
+Dynamic typing = flexible data type.
+
+# What is static typing and dynamic typing?
+
+Static typing means data type is fixed.
+Type is checked before program runs.
+Example: Java, C, C++.
+
+Dynamic typing means type is not fixed.
+Type is decided during execution.
+Python supports dynamic typing.
+
+## Static typing example
+
+```java
+int x = 10;
+```
+
+## Dynamic typing example
+
+```python
+x = 10
+x = "Hello"
+```
+
+## Easy meaning
+
+Static typing = fixed data type.
+Dynamic typing = flexible data type.
+
+# Why does index start from 0 in Python?
+
+Index starts from zero due to memory addressing.
+First element is at zero offset position.
+It matches how memory locations work in C language.
+It makes computation faster and efficient.
+It simplifies pointer arithmetic in programming.
+
+# Is Python 100% Object-Oriented Programming language?
+
+Python is not 100% object-oriented.
+It supports object-oriented programming fully.
+But it also supports procedural programming.
+Functions and variables can exist outside classes.
+So Python is multi-paradigm language.
+# What is tuple unpacking in Python?
+
+Tuple unpacking means assigning values at once.
+It extracts values from a tuple.
+It assigns them to multiple variables.
+Number of variables must match values.
+
+## Example
+
+```python
+t = (10, 20, 30)
+
+a, b, c = t
+
+print(a)
+print(b)
+print(c)
+```
+
+## Easy meaning
+
+Tuple unpacking splits tuple into variables.
+Each value goes to separate variable.
+
+# Difference between is and == in Python
+
+== compares values of objects.
+is compares memory location of objects.
+
+## Example
+
+```python
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a == b)  # True
+print(a is b)  # False
+```
+
+## Easy meaning
+
+== checks values are same.
+is checks both are same object.
+
+---
+
+# Mutable vs Immutable objects
+
+Mutable objects can be changed.
+Immutable objects cannot be changed.
+
+## Mutable examples
+
+List, dictionary, set are mutable.
+They can be modified after creation.
+
+## Immutable examples
+
+String, tuple, integer are immutable.
+They cannot be changed after creation.
+
+## Example
+
+```python
+a = [1, 2]
+a.append(3)
+
+b = "hello"
+# b[0] = "H"  ❌ not allowed
+```
+
+## Easy meaning
+
+Mutable → can change data.
+Immutable → cannot change data.
+
+# How is memory managed in Python?
+
+Python memory is managed automatically.
+It uses private heap memory space.
+Objects are stored in heap memory.
+Python handles allocation and deallocation.
+
+## Garbage Collection
+
+Python removes unused objects automatically.
+It frees memory when objects are not needed.
+It uses reference counting mechanism.
+It also uses cyclic garbage collector.
+
+
+# Reference Counting in Python
+
+Each object has a count of references.
+When count becomes zero, object is deleted.
+This helps free memory automatically.
+
+## Easy meaning
+
+No variable points → object is removed.
+
+
+# 1. Positional Arguments
+
+Values are passed based on order.
+Each value maps to parameter position.
+
+---
+
+# 2. Keyword Arguments
+
+Values are passed using parameter names.
+Order does not matter.
+
+---
+
+# 3. Default Arguments
+
+Parameters have default values.
+Default is used if no value is passed.
+
+How many types of data types are there in Python?
+
+Python has several built-in data types, which are commonly grouped into 8 categories:
+
+Numeric – int, float, complex
+Boolean – bool
+Text – str
+Sequence – list, tuple, range
+Set – set, frozenset
+Mapping – dict
+Binary – bytes, bytearray, memoryview
+None Type – None
+
+Python has 8 categories of built-in data types: Numeric, Boolean, Text, Sequence, Set, Mapping, Binary, and NoneType."
+
+Python has 2 main categories of data types:
+
+Primitive (Basic) Data Types
+int
+float
+complex
+bool
+str
+Non-Primitive (Collection) Data Types
+list
+tuple
+set
+frozenset
+dict
+range
+bytes
+bytearray
+memoryview
+NoneType
+
+Errors are reported immediately during execution.
+It is easier to debug and test.
+Python is an interpreted programming language.
