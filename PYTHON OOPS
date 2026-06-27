@@ -1,0 +1,1516 @@
+## 1. What is Object-Oriented Programming (OOP)?
+
+Object-Oriented Programming (OOP) is a programming paradigm that organizes code using **classes** and **objects**. It combines **data (attributes)** and the **methods (functions)** that operate on that data into a single unit called an **object**.
+
+OOP helps in:
+
+* **Code reusability**
+* **Modularity**
+* **Security** through data hiding
+* **Easy maintenance** of code
+
+## 2. Why do we use OOP?
+
+**Answer:**
+
+We use **Object-Oriented Programming (OOP)** to write code that is **organized, reusable, secure, and easy to maintain**. OOP divides a program into **classes and objects**, making it easier to manage and update large applications.
+
+**Benefits of OOP:**
+
+* **Code Reusability** – Reuse existing code using inheritance.
+* **Modularity** – Organize code into separate classes for better structure.
+* **Security** – Protect data using encapsulation (data hiding).
+* **Easy Maintenance** – Changes in one part of the program have minimal impact on other parts.
+* **Scalability** – Makes it easier to develop and manage large applications.
+2 Types of Inheritance in Python
+
+## 1. Single Inheritance
+
+**Definition:**
+
+Single inheritance is a type of inheritance in which **one child class inherits the properties and methods of one parent class**.
+
+---
+
+## 2. Multiple Inheritance
+
+**Definition:**
+
+Multiple inheritance is a type of inheritance in which **one child class inherits the properties and methods of two or more parent classes**.
+
+---
+
+## 3. Multilevel Inheritance
+
+**Definition:**
+
+Multilevel inheritance is a type of inheritance in which **a child class inherits from a parent class, and another child class inherits from that child class**, forming multiple levels of inheritance.
+
+---
+
+## 4. Hierarchical Inheritance
+
+**Definition:**
+
+Hierarchical inheritance is a type of inheritance in which **two or more child classes inherit the properties and methods of a single parent class**.
+
+---
+
+## 5. Hybrid Inheritance
+
+**Definition:**
+
+Hybrid inheritance is a type of inheritance that **combines two or more types of inheritance (such as multiple and hierarchical inheritance) in a single program**.
+
+3. Abstraction
+Simple Meaning
+
+Abstraction means hiding the implementation (how something works) and showing only the essential features (what it does) to the user.
+
+In simple words:
+
+The user knows what to do, but doesn't need to know how it's done internally.
+
+Real-Life Example 🌍
+
+Think about driving a car.
+
+You press the accelerator to increase speed.
+You press the brake to stop.
+
+You don't need to know how the engine, gearbox, or fuel injection system works internally.
+
+This is abstraction—you use the functionality without knowing the internal implementation.
+
+Interview Definition
+
+Abstraction is an OOP principle that hides the internal implementation details and exposes only the essential features or functionality to the user.
+
+Why do we use Abstraction?
+Hides complex implementation.
+Makes programs easier to use.
+Improves security by exposing only what is necessary.
+Makes code easier to maintain.
+Abstraction = Hide "How it works" and show only "What it does."
+
+# What is an Abstract Class?
+
+## Definition
+
+An **abstract class** is a **blueprint** that **cannot be instantiated (its object cannot be created directly)**. It is used when we want **all child classes 
+to follow the same structure** while allowing **each child class to provide its own implementation** for the abstract methods.
+
+## Key Points
+
+* Cannot create an object of an abstract class.
+* Used as a blueprint for child classes.
+* Ensures all child classes follow the same structure.
+* Can contain both **abstract methods** and **concrete (normal) methods**.
+* Child classes must implement all abstract methods.
+
+## Example
+
+```python
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+
+    @abstractmethod
+    def work(self):
+        pass
+
+class Developer(Employee):
+
+    def work(self):
+        print("Writing Code")
+```
+We cannot create an object of an abstract class because it is an incomplete class that serves as a blueprint. Instead, we create objects of its child classes
+which provide the implementation for the abstract methods.
+
+Step 1: Imagine a Company 🏢
+
+Suppose you're building software for a company.
+
+There are employees like:
+
+Software Engineer
+Manager
+Tester
+
+Every employee must have a work() method.
+
+But...
+
+Can you say how an Employee works?
+
+❌ No.
+
+Because:
+
+A Software Engineer writes code.
+A Manager manages the team.
+A Tester tests the application.
+
+So the Employee class cannot define exactly what work() does.
+
+Instead, it simply says:
+
+"Every employee must have a work() method."
+
+That's an abstract class
+
+
+# Abstract Method in Python
+
+## What is an Abstract Method?
+
+An **abstract method** is a **method declared in an abstract class without any implementation (method body)**. It acts as a **template** that **must be implemented (overridden)** by every child class.
+
+---
+
+## Why Do We Need an Abstract Method?
+
+An abstract method is used when the **parent class knows that every child class should have a particular method, but it does not know how that method should work**.
+
+
+For example, every employee should have a `work()` method, but:
+
+* Developer → Writes code.
+* Tester → Tests software.
+* Manager → Manages the team.
+
+Since the implementation is different for each child class, the parent class only declares the method and leaves the implementation to the child classes.
+
+---
+
+## What Happens Without an Abstract Method?
+
+Without an abstract method, Python **does not enforce** that child classes implement the required method.
+
+```python
+class Developer:
+    def work(self):
+        print("Writing Code")
+
+class Tester:
+    pass
+```
+
+The above code is valid even though `Tester` does not have a `work()` method.
+
+---
+
+## What Happens With an Abstract Method?
+
+With an abstract method, every child class **must implement** the method.
+
+```python
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+
+    @abstractmethod
+    def work(self):
+        pass
+
+class Developer(Employee):
+
+    def work(self):
+        print("Writing Code")
+```
+
+If a child class does not implement `work()`, Python will **not allow its object to be created**.
+
+---
+
+## Key Points
+
+* Declared inside an abstract class.
+* Has only a declaration and no implementation.
+* Defined using the `@abstractmethod` decorator.
+* Must be implemented by every child class.
+* Ensures all child classes provide the required functionality.
+
+---
+
+## Interview Definition
+
+> **An abstract method is a method declared in an abstract class without an implementation. It acts as a template that must be implemented by every child class.**
+# Why Do We Use `@abstractmethod` in Python?
+
+## What is `@abstractmethod`?
+
+`@abstractmethod` is a **decorator** provided by Python's **`abc` (Abstract Base Class)** module. It is used to declare an **abstract method** inside an abstract class.
+
+---
+
+## Why Do We Use `@abstractmethod`?
+
+We use `@abstractmethod` to **force every child class to implement a specific method**.
+
+Without `@abstractmethod`, Python does **not guarantee** that child classes will implement the required method.
+
+With `@abstractmethod`, Python ensures that every child class provides its own implementation before an object of that child class can be created.
+
+---
+
+## Without `@abstractmethod`
+
+```python
+from abc import ABC
+
+class Employee(ABC):
+
+    def work(self):
+        pass
+```
+
+Here, `work()` is a **normal method**.
+
+Child classes are **not required** to override it.
+
+---
+
+## With `@abstractmethod`
+
+```python
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+
+    @abstractmethod
+    def work(self):
+        pass
+```
+
+Here, `work()` becomes an **abstract method**.
+
+Every child class **must implement** the `work()` method.
+
+If a child class does not implement it, Python will **not allow its object to be created**.
+
+---
+
+## Key Points
+
+* `@abstractmethod` is a decorator from the `abc` module.
+* It is used to declare an abstract method.
+* It forces child classes to implement the method.
+* It helps enforce a common structure across all child classes.
+
+---
+
+## Interview Definition
+
+> **`@abstractmethod` is a decorator provided by Python's `abc` module. It is used to declare an abstract method and ensures that every child class implements that method before an object of the child class can be created.**
+
+---
+
+## Important Note
+
+**Abstraction is possible in Python.**
+
+Python implements abstraction using:
+
+* `ABC` (Abstract Base Class)
+* `@abstractmethod` decorator
+"Yes. Python supports abstraction using the abc module. Unlike Java, it doesn't have built-in abstract classes as a language feature, so we use ABC and @abstractmethod from the abc module to implement abstraction."
+
+
+What is a Concrete Subclass?
+Simple Meaning
+
+A concrete subclass is a child class that implements all the abstract methods of the abstract class.
+
+Once it implements all abstract methods, you can create its object.
+
+Example
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+
+    @abstractmethod
+    def work(self):
+        pass
+
+class Developer(Employee):
+
+    def work(self):
+        print("Writing Code")
+
+Here:
+
+Employee → Abstract Class
+work() → Abstract Method
+Developer → Concrete Subclass ✅
+
+Why?
+
+Because Developer implemented the work() method.
+
+Now you can do:
+
+dev = Developer()   # ✅ Allowed
+What is NOT a Concrete Subclass?
+class Tester(Employee):
+    pass
+
+This is not a concrete subclass because it did not implement work().
+
+So:
+
+t = Tester()   # ❌ Error
+Interview Definition
+
+A concrete subclass is a child class that implements all the abstract methods inherited from an abstract class. Since it provides complete implementations, its objects can be created.
+
+Easy Trick
+Abstract Class → Blueprint
+Abstract Method → Method without implementation
+Concrete Subclass → Child class that implements all abstract methods
+
+💡 One-line memory trick:
+
+Concrete = Complete.
+A concrete subclass is a complete child class, so Python allows you to create its object.
+
+
+"How do you create an abstract class in Python?",
+
+from abc import ABC, abstractmethod   # Step 1
+
+class Employee(ABC):                  # Step 2
+
+    @abstractmethod                   # Step 3
+    def work(self):
+        pass
+
+What is super()?
+super() is used to access the parent class's methods or constructor (__init__) from the child class.
+
+We use super().__init__() to call the parent class's constructor so that the parent class initializes its attributes, avoiding duplicate code in the child class
+
+# What is Encapsulation?
+
+## Definition
+
+**Encapsulation** is an OOP principle that **wraps (combines) data (variables) and methods (functions) into a single unit called a class** and **restricts direct access to the data** to protect it from unauthorized or accidental modification.
+
+## Interview Definition
+
+> **Encapsulation is the process of combining data and methods into a single class and protecting the data by restricting direct access to it.**
+
+
+What is Encapsulation?
+Step 1: What is the problem?
+
+Suppose you have a Bank Account.
+
+class BankAccount:
+
+    def __init__(self):
+        self.balance = 10000
+
+Now anyone can do this:
+
+account = BankAccount()
+
+account.balance = 10000000
+
+😨 Anyone can change the balance directly.
+
+Or even:
+
+account.balance = -5000
+
+Now the bank account has a negative balance.
+
+Is this safe?
+
+❌ No.
+
+Step 2: How do we solve it?
+
+We hide the data and allow access only through methods.
+
+For example:
+
+class BankAccount:
+
+    def __init__(self):
+        self.__balance = 10000
+
+Now no one can directly do:
+
+account.__balance = 50000
+
+Instead, they must use methods like:
+
+deposit()
+withdraw()
+get_balance()
+Step 3: Why do we do this?
+
+Because we want to protect the data.
+
+Suppose someone withdraws money.
+
+Instead of allowing:
+
+balance = balance - amount
+
+directly,
+
+we check:
+
+if balance >= amount:
+    withdraw
+else:
+    print("Insufficient Balance")
+
+So the data is protected.
+
+Real-Life Example 🌍
+
+Think about an ATM.
+
+You can:
+
+Deposit money
+Withdraw money
+Check balance
+
+But you cannot directly modify the bank's database.
+
+The ATM gives you controlled access.
+
+This is Encapsulation.
+# Encapsulation Example in Python
+
+```python
+class BankAccount:
+
+    def __init__(self):
+        self.__balance = 10000      # Private variable
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient Balance")
+
+    def get_balance(self):
+        return self.__balance
+
+
+account = BankAccount()
+
+account.deposit(5000)
+account.withdraw(3000)
+
+print(account.get_balance())    # 12000
+
+# print(account.__balance)       # ❌ Error (Cannot access directly)
+```
+
+## Output
+
+```
+12000
+```
+
+## Explanation
+
+* `__balance` is a **private variable**, so it cannot be accessed directly from outside the class.
+* `deposit()` is used to add money.
+* `withdraw()` is used to withdraw money.
+* `get_balance()` is used to view the balance.
+* This protects the data by allowing access only through methods.
+
+## Why is this Encapsulation?
+
+* The **data** (`__balance`) and **methods** (`deposit()`, `withdraw()`, `get_balance()`) are wrapped inside the `BankAccount` class.
+* Direct access to `__balance` is restricted.
+* The balance can only be modified through controlled methods.
+
+```
+```
+
+
+# Access Modifiers in Python
+
+Access modifiers control **who can access the variables and methods** of a class.
+
+Python provides three types of access modifiers:
+
+* Public
+* Protected
+* Private
+
+---
+
+# 1. Public Access Modifier
+
+## Definition
+
+A **public** member can be accessed from **anywhere** in the program. By default, all variables and methods in Python are **public**.
+
+## Syntax
+
+```python
+self.name
+```
+
+## Example
+
+```python
+class Student:
+
+    def __init__(self):
+        self.name = "Sathwik"
+
+
+student = Student()
+
+print(student.name)
+```
+
+### Output
+
+```text
+Sathwik
+```
+
+### Key Points
+
+* Accessible inside the class.
+* Accessible outside the class.
+* Accessible by child classes.
+* Default access modifier in Python.
+
+---
+
+# 2. Protected Access Modifier
+
+## Definition
+
+A **protected** member is intended to be accessed **within the class and its child classes**. In Python, it is represented using a **single underscore (`_`)**.
+
+> **Note:** Protected members are only a **convention** in Python. They can still be accessed from outside the class, but it is discouraged.
+
+## Syntax
+
+```python
+self._name
+```
+
+## Example
+
+```python
+class Student:
+
+    def __init__(self):
+        self._name = "Sathwik"
+
+
+student = Student()
+
+print(student._name)
+```
+
+### Output
+
+```text
+Sathwik
+```
+
+### Key Points
+
+* Represented using a single underscore (`_`).
+* Intended for use within the class and child classes.
+* Can still be accessed from outside the class.
+* It is a naming convention, not strict access control.
+
+---
+
+# 3. Private Access Modifier
+
+## Definition
+
+A **private** member is intended to be accessed **only within the same class**. It is represented using a **double underscore (`__`)**.
+
+Python restricts direct access to private members using **name mangling**.
+
+## Syntax
+
+```python
+self.__name
+```
+
+## Example
+
+```python
+class Student:
+
+    def __init__(self):
+        self.__name = "Sathwik"
+
+
+student = Student()
+
+print(student.__name)
+```
+
+### Output
+
+```text
+AttributeError
+```
+
+### Correct Way
+
+```python
+class Student:
+
+    def __init__(self):
+        self.__name = "Sathwik"
+
+    def get_name(self):
+        return self.__name
+
+
+student = Student()
+
+print(student.get_name())
+```
+
+### Output
+
+```text
+Sathwik
+```
+
+### Key Points
+
+* Represented using a double underscore (`__`).
+* Intended to be accessed only within the same class.
+* Direct access from outside the class is restricted.
+* Commonly used to achieve encapsulation and data hiding.
+
+---
+
+# Summary
+
+| Access Modifier | Symbol   | Access from Outside | Child Class Access |
+| --------------- | -------- | ------------------- | ------------------ |
+| Public          | `name`   | ✅ Yes               | ✅ Yes              |
+| Protected       | `_name`  | ✅ Yes (Discouraged) | ✅ Yes              |
+| Private         | `__name` | ❌ No (Directly)     | ❌ No (Directly)    |
+
+---
+
+# Interview Tip
+
+* **Public** → Accessible everywhere.
+* **Protected** → Intended for the class and child classes (convention).
+* **Private** → Intended only for the same class and used for data hiding.
+It shows an error when you access it directly, but you can still access it using the name-mangled name.
+
+Example:
+
+class Student:
+
+    def __display(self):
+        print("Hello")
+
+student = Student()
+
+student.__display()          # ❌ AttributeError
+student._Student__display()  # ✅ Hello
+Why?
+
+Because Python doesn't make it truly private.
+
+It simply changes the name internally:
+
+__display
+
+becomes
+
+_Student__display
+
+This process is called name mangling.
+
+Important Interview Point
+
+If an interviewer asks:
+
+"Are private members completely inaccessible in Python?"
+
+The correct answer is:
+
+No. Python's private members are not completely inaccessible. 
+Python uses name mangling to discourage direct access. They can still be accessed using the mangled name (e.g., _ClassName__member), but this is not recommended.
+
+What is a Getter Method?
+Simple Meaning
+
+A Getter is a method used to read (get) the value of a private variable.
+
+Suppose:
+
+self.__balance = 10000
+
+You cannot do:
+
+print(account.__balance)
+
+❌ Error
+
+So we create a getter:
+
+def get_balance(self):
+    return self.__balance
+
+Now:
+
+print(account.get_balance())
+
+✅ Output:
+
+10000
+Interview Definition
+
+A getter is a method used to access the value of a private variable.
+
+What is a Setter Method?
+Simple Meaning
+
+A Setter is a method used to modify (set) the value of a private variable in a controlled way.
+
+Example:
+
+def set_balance(self, balance):
+    if balance >= 0:
+        self.__balance = balance
+
+Now instead of writing:
+
+account.__balance = -100
+
+❌ Not allowed.
+
+We write:
+
+account.set_balance(5000)
+
+✅ Allowed.
+
+The setter can also perform validation.
+
+Complete Example
+class BankAccount:
+
+    def __init__(self):
+        self.__balance = 10000
+
+    # Getter
+    def get_balance(self):
+        return self.__balance
+
+    # Setter
+    def set_balance(self, balance):
+        if balance >= 0:
+            self.__balance = balance
+
+
+account = BankAccount()
+
+print(account.get_balance())   # 10000
+
+account.set_balance(20000)
+
+print(account.get_balance())   # 20000
+Why do we use Getter and Setter?
+Getter → To safely read private data.
+Setter → To safely modify private data.
+They provide controlled access to private variables.
+Setters allow validation before updating data.
+Interview Definitions
+Getter
+
+A getter is a method used to access the value of a private variable.
+
+Setter
+
+A setter is a method used to modify the value of a private variable in a controlled and validated way.
+
+What is Polymorphism?
+Simple Meaning
+
+Polymorphism means “one thing having many forms.”
+
+In Python OOP:
+
+The same method name can behave differently depending on the object calling it.
+
+Real-life example 🌍
+
+Think of a person:
+
+At home → child
+At college → student
+At job → employee
+
+Same person, but different behavior in different situations.
+
+That is polymorphism.
+
+Example in Python (Method Overriding)
+class Animal:
+    def sound(self):
+        print("Some sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def sound(self):
+        print("Meow")
+
+
+a = Animal()
+a.sound()
+
+d = Dog()
+d.sound()
+
+c = Cat()
+c.sound()
+Output:
+Some sound
+Bark
+Meow
+What is happening here?
+Same method name → sound()
+Different classes → different behavior
+
+This is Polymorphism (Method Overriding)
+
+Polymorphism is an OOP concept where the same method name behaves differently in different classes. It allows one interface to represent multiple forms.
+
+Run-time Polymorphism
+
+Run-time polymorphism is a type of polymorphism where the method to be executed is decided at runtime based on the object. It is achieved using method overriding.
+
+class Animal:
+    def sound(self):
+        print("Some sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def sound(self):
+        print("Meow")
+
+
+a = Animal()
+a.sound()
+
+d = Dog()
+d.sound()
+
+c = Cat()
+c.sound()
+Output
+Some sound
+Bark
+Meow
+What is happening?
+
+Same method name → sound()
+But behavior changes based on object.
+
+So:
+
+Dog object → Dog’s sound()
+Cat object → Cat’s sound()
+
+This decision happens at runtime
+
+1. Compile-time Polymorphism
+
+Compile-time polymorphism is a type of polymorphism where the method to be executed is decided at the time of compilation. It is achieved using method overloading 
+(same method name with different parameters).
+
+Python does NOT support true compile-time polymorphism, because it does not support method overloading in the traditional way.
+
+Compile-time polymorphism = Same method name, different parameters, decision made before execution.
+
+1.WHAT IS METHOD OVERRIDDING
+
+Method overriding is a type of polymorphism where a child class provides its own implementation of a method that is already defined in the parent class. 
+It is used to achieve run-time polymorphism in Python.
+class Animal:
+    def sound(self):
+        print("Some sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+
+class Cat(Animal):
+    def sound(self):
+        print("Meow")
+
+2.what is METHOD OVERLOADING
+
+Method overloading is a type of polymorphism where multiple methods have the same name but different parameters. Python does not support true method overloading,
+but it can be simulated using default or variable-length arguments.
+class Calculator:
+
+    def add(self, a, b):
+        return a + b
+
+    def add(self, a, b, c):
+        return a + b + c
+
+HERE PYTHON DOES NOT SUPPORT THIS BUT WE CAN ACHIVE ANOTHER WAY BUT IT IS NOIT REMMMEDED
+
+class Calculator:
+
+    def add(self, a, b=0, c=0):
+        return a + b + c
+
+
+obj = Calculator()
+
+print(obj.add(5))
+print(obj.add(5, 10))
+print(obj.add(5, 10, 15))
+
+How do you create an object?
+
+An object is created by calling the class name like a function and passing required arguments to the constructor (__init__ method).
+class Student:
+
+    def __init__(self, name):
+        self.name = name
+
+
+s1 = Student("Sathwik")
+
+Can we create multiple objects from one class?
+
+Yes, we can create multiple objects from a single class. Each object has its own separate memory and state, even though they are created from the same class
+
+Can one object belong to multiple classes?
+
+No, in Python an object is an instance of only one class at a time. However, through inheritance, a child class object can access properties and methods of 
+multiple parent classes.
+
+What happens internally when an object is created in Python?
+
+When an object is created, memory is allocated in the heap, and the constructor (__init__) is called to initialize the object’s state. 
+The reference to that object is stored in a variable (stack).
+
+Where are objects stored in memory?
+
+Objects are stored in Heap memory.
+
+✔️ Heap stores actual object data (attributes)
+
+Where are reference variables stored?
+
+Reference variables are stored in Stack memory.
+
+✔️ Stack stores the reference (address) pointing to the object in heap
+
+Can an object exist without a reference in Python?
+
+Yes, an object can exist without a reference in Python, but only temporarily. Such objects become eligible for garbage collection.
+
+How it works
+Case 1: With reference
+s1 = Student("Sathwik")
+Object is created
+s1 points to it
+Case 2: Without reference (no variable)
+Student("Sathwik")
+Object is created in heap
+But no reference variable points to it
+
+👉 This is called an anonymous object
+Can a reference exist without an object?
+No, a reference variable cannot exist without pointing to an object in Python. A reference must always refer to some object in memory
+
+What happens if two references point to the same object?
+
+Both references point to the same memory location (same object in heap). Any change made using one reference will reflect in the other, 
+because they are pointing to the same object.
+
+
+What happens if we assign one object reference to another?
+
+The new reference does NOT create a new object. Instead, it points to the same existing object (shallow copy of reference).
+
+Example
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+s1 = Student("Sathwik")
+s2 = s1
+What is Object Identity?
+
+Object identity is the unique identity (memory address) of an object in Python that distinguishes it from all other objects.
+
+How do you compare two objects in Python?
+
+We compare two objects using the == operator (value comparison) and the is operator (identity comparison).
+
+
+1.. Is __init__() a constructor or an initializer?
+__init__() is a constructor method in Python that is automatically called when an object is created. It is used to initialize the attributes of the object.
+Technically, __init__() is an initializer, not a constructor. The actual object creation is done by __new__(), and __init__() is used to initialize 
+the object after it is created.In Python, __init__() is commonly called a constructor, but technically it is an initializer because object 
+creation is handled by __new__().
+
+Why do we use constructors (__init__)?
+
+We use constructors to initialize the object’s state (assign initial values to attributes) automatically when the object is created.
+
+Simple meaning
+Constructor runs automatically
+Sets initial values for object
+Prepares object for use
+Constructors are used to initialize the state of an object automatically when it is created. They assign initial values 
+to the object's attributes and prepare it for use.
+
+Can we call __init__() manually?
+yes we can call but it was not recommmeeded when u have object already
+Yes, we can call __init__() manually, but it is NOT recommended because it is automatically called when an object is created.
+
+Example (manual call)
+class Student:
+
+    def __init__(self, name):
+        self.name = name
+        print("init called")
+
+
+s1 = Student("Sathwik")
+
+s1.__init__("Ravi")   # manual call
+Output
+init called
+init called
+
+Can we have multiple constructors in Python?
+
+No, Python does not support multiple constructors in the same class. If multiple __init__ methods are defined, the last one overrides the previous ones. 
+However, we can achieve similar behavior using default arguments or variable-length arguments.
+
+How do we achieve constructor overloading in Python?
+
+Python does not support constructor overloading directly, but we can achieve it using default arguments, *args, or **kwargs in __init__() method.
+
+What happens if we don’t write __init__()?
+If we don’t define __init__(), Python still creates the object successfully and uses a default constructor provided by the parent class (object).
+
+Can __init__() return a value?
+
+No, __init__() cannot return any value except None.
+
+Can constructor be private in Python?
+
+No, Python does not support a truly private constructor like Java or C++. However, we can make it conventionally 
+private using naming conventions, but it can still be accessed.
+
+Can constructor be inherited in Python?
+
+❌ Constructor (__init__) is NOT inherited directly like normal methods.
+But ✅ it can be accessed and used by the child class through inheritance (method overriding + super()).
+
+an a child class call parent constructor?
+
+Yes, a child class can call the parent class constructor using the super() keyword.
+
+Yes, the parent constructor can execute automatically in Python, but only if the child class does NOT define its own __init__() method.
+
+2. Method
+
+A method is a normal function inside a class that is called explicitly using an object. It is used to define behavior.
+
+| Feature     | Constructor       | Method                |
+| ----------- | ----------------- | --------------------- |
+| Purpose     | Initialize object | Perform actions       |
+| Name        | `__init__()`      | Any name              |
+| Call        | Automatic         | Manual                |
+| Frequency   | Once per object   | Multiple times        |
+| Return type | Always `None`     | Can return value      |
+| When used   | Object creation   | After object creation |
+
+
+What is self in Python?
+
+self is a reference variable that refers to the current object of the class. It is used to access instance variables and methods inside the class
+38. Is self a keyword?
+    no self is not a keyword it is just a variable many of the devs just use that u can also just any name like this that expect the keywords like if else break else def
+
+What happens if we don’t use self?
+If we don’t use self, Python will NOT know that we are referring to the current object, and instance variables will not be stored in the object. 
+It will treat variables as local variables inside the method.
+
+Why do we write self.name = name?
+
+We write self.name = name to store the value inside the object (instance variable), so that it can be used later by other methods in the class.
+
+Is self automatically passed?
+
+Yes, Python automatically passes the object reference as the first argument to instance methods. That first argument is received as self.
+
+What is an instance variable?
+object reference variable
+Can we create instance variables outside the constructor?
+
+Yes, instance variables can be created outside __init__() (constructor), but only inside instance methods using self.
+What is a Class Variable?
+
+A class variable is a variable that is shared by all objects of a class. It is defined inside the class but outside any method.
+
+Where are class variables stored?
+
+Class variables are stored in the class itself, not inside individual objects. They are stored in the class’s namespace (class object in memory).
+
+Can objects modify class variables?
+
+Yes, objects can modify class variables, but usually it creates a new instance variable instead of changing the class variable.
+
+When should we use class variables?
+
+We use class variables when a value is common for all objects and should be shared across all instances of a class.
+
+What is an Instance Method?
+
+An instance method is a function defined inside a class that works on an object (instance) of the class and can access instance variables using self.
+
+1. Class Method
+
+A class method is a method that works on the class itself, not on an object. It uses @classmethod and takes cls as the first parameter.
+
+2. Static Method
+
+A static method is a method inside a class that does NOT use self or cls. It behaves like a normal function but belongs to the class.
+
+Example
+class Math:
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+  Does Python support private variables?
+
+Python does NOT have true private variables like Java/C++. But it supports “name mangling” to make variables strongly private by convention
+
+1.We can create object only of the child class that implements all abstract methods
+
+  yes if the child class implements all abstract methods
+
+How do we create an Abstract Class in Python?
+
+We create an abstract class using the ABC class from the abc module.
+
+Correct import
+from abc import ABC, abstractmethod
+Step 1: Create Abstract Class
+class Employee(ABC):
+
+    @abstractmethod
+    def work(self):
+        pass
+
+ABC = Abstract Base Class
+
+What is @abstractmethod? it is a method it does not have any implmention it make sure that every method shoukd have their implemnton in child methods
+
+42. Can we inherit multiple classes?
+
+Yes. Python supports multiple inheritance.
+
+143. Can constructors be inherited?
+
+Not directly. But parent constructor is called automatically if child does not define __init__() or via super().
+
+144. Can static methods be overridden?
+
+Yes. But it is not true polymorphism; it behaves like method hiding.
+
+145. Can instance methods access static variables?
+
+Yes. Instance methods can access static variables using class name or object.
+
+146. Can static methods access instance variables?
+
+No. Static methods cannot access instance variables directly.
+
+147. Can class methods access instance variables?
+
+No. Class methods can access only class variables via cls.
+
+148. Can instance methods access class variables?
+
+Yes. Instance methods can access class variables.
+
+149. Can we overload constructors?
+
+No direct support. We simulate using default arguments, *args, or **kwargs.
+
+150. Can we override constructors?
+
+Yes. Child class can override __init__().
+
+151. Why doesn't Python support true method overloading?
+
+Because Python is dynamically typed; function signature is not strictly enforced.
+
+152. Can we instantiate an abstract class?
+
+No. Abstract classes cannot be instantiated.
+
+153. Can abstract classes have constructors?
+
+Yes. They can have constructors, but they cannot be instantiated directly.
+
+154. Can abstract classes have normal methods?
+
+Yes. They can have both abstract and concrete methods.
+
+155. Can abstract methods have a body?
+
+Yes, but child class must still override it.
+
+156. Can a child class skip implementing an abstract method?
+
+No. If not implemented, child class also becomes abstract.
+
+157. Why use super() instead of calling parent class directly?
+
+super() supports MRO and avoids hardcoding parent class name.
+
+158. What happens if a child class doesn't call the parent constructor?
+
+Parent constructor will not execute if child overrides __init__() and does not call super().
+
+159. Explain MRO (Method Resolution Order)
+
+MRO defines the order in which Python searches methods in multiple inheritance.
+
+ClassC -> ClassB -> ClassA -> object
+160. Explain Diamond Problem
+
+Occurs in multiple inheritance when a class inherits from two classes that have a common base.
+
+Python resolves it using MRO.
+
+    A
+   / \
+  B   C
+   \ /
+    D
+
+Python ensures A is called only once using MRO.
+
+
+1. Real-Time Example of Each OOP Pillar
+1. Encapsulation 🏦 (ATM Machine)
+
+Definition:
+Encapsulation means wrapping data and methods into a single unit (class) and restricting direct access to data.
+
+Real-time Example:
+An ATM machine.
+
+You can withdraw money.
+You can deposit money.
+But you cannot directly access or change the bank balance inside the ATM.
+
+Interview Answer:
+
+An ATM is a real-time example of encapsulation because it hides the internal bank data and allows users to access it only through methods like withdraw and deposit.
+
+2. Inheritance 👨‍👦
+
+Real-time Example:
+
+A Car inherits features from a Vehicle.
+
+Vehicle:
+
+Start
+Stop
+Brake
+
+Car:
+
+AC
+Music System
+
+The Car gets all Vehicle features without rewriting them.
+
+Interview Answer:
+
+A car inheriting properties from a vehicle is a real-time example of inheritance.
+
+3. Polymorphism 📱
+
+Real-time Example:
+
+The Power Button on a phone.
+
+Same button:
+
+Press once → Screen ON
+Press again → Screen OFF
+Long press → Restart menu
+
+Same button, different behavior.
+
+Interview Answer:
+
+A mobile phone power button is an example of polymorphism because the same action performs different operations.
+
+4. Abstraction 🚗
+
+Real-time Example:
+
+Driving a car.
+
+You know:
+
+Accelerator
+Brake
+Steering
+
+You don't need to know:
+
+Engine mechanism
+Fuel injection
+Gearbox internals
+
+Interview Answer:
+
+Driving a car is an example of abstraction because users interact only with essential features while the internal implementation is hidden.
+
+2. Why doesn't Python support abstraction?
+
+Actually, this question is incorrect.
+
+✅ Python DOES support abstraction.
+
+It supports abstraction using the abc module.
+
+Example:
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+
+    @abstractmethod
+    def sound(self):
+        pass
+Correct Interview Answer
+
+Python supports abstraction through Abstract Base Classes (ABC) using the abc module and the @abstractmethod decorator.
+
+3. Why doesn't Python support method overloading?
+
+Python doesn't support true method overloading because the latest method definition replaces the previous one.
+
+Example:
+
+class Demo:
+
+    def add(self, a):
+        print(a)
+
+    def add(self, a, b):
+        print(a + b)
+
+Only the second add() exists.
+
+If you call:
+
+d = Demo()
+d.add(10)
+
+It gives an error because the first add() was overwritten.
+
+Interview Answer
+
+Python does not support true method overloading because it does not allow multiple methods with the same name in the same class. The latest method definition overrides the previous one. We can achieve similar behavior using default arguments or *args.
+
+4. What is an Instance?
+
+Definition:
+
+An instance is another name for an object created from a class.
+
+Example:
+
+class Student:
+    pass
+
+s1 = Student()
+
+Here:
+
+Student → Class
+
+s1 → Instance (Object)
+
+Interview Answer
+
+An instance is an object created from a class. Each instance has its own memory and can store different data.
+
+5. What is Dynamically Typed in Python?
+
+Definition:
+
+Python is dynamically typed because you do not need to declare the data type of a variable. Python determines the type automatically at runtime.
+
+Example:
+
+x = 10
+print(type(x))
+
+Now:
+
+x = "Hello"
+print(type(x))
+
+Same variable.
+
+Different data type.
+
+No error.
+
+Interview Answer
+
+Python is dynamically typed because the data type of a variable is determined automatically at runtime. The programmer does not need to declare the variable's type.
+
+
+
+
+
+
+
+
+
