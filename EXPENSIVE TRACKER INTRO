@@ -4,7 +4,7 @@
 It allows users to add income and expenses, and it instantly calculates the total income, total expenses, and the remaining balance.
 All the transactions are displayed in a table with date, type, and amount.
 The UI is clean and responsive, and the entire calculation and updating of data happens dynamically using JavaScript DOM manipulation.
-Right now, the project works fully on the frontend, and I’m planning to add local storage in the next version so that the data is saved permanently.”
+Right now, the project works fully on the frontend, and "As a future enhancement, I plan to integrate Local Storage..." in the next version so that the data is saved permanently.”
 
 This is your core explanation.
 If the interviewer understands this, 50% job done.
@@ -56,11 +56,16 @@ These are asked to test your thinking ability.
 13. How will you make it secure if financial data is added?
 “By using authentication, HTTPS, and enforcing encrypted data storage.”
 
+"If my project stores financial data, I would add user authentication so only authorized users can log in. 
+I would use HTTPS to encrypt data during transmission, and if I use a database, 
+I would store sensitive information securely with proper access control and encryption where appropriate."
 14. How would you handle thousands of transactions in the table?
 “Use pagination, search filters, and optimize DOM updates.”
 
 15. What if two users use the same browser?
 “I can create separate user profiles using local storage or backend authentication.”
+"Using Local Storage, I can separate each user's data by storing it with a unique key, such as the username. However, this is only suitable for simple applications because Local Storage does not provide secure authentication.
+For a real-world application, I would implement backend authentication and store each user's data in a database, where access is controlled securely."
 
 ✅ VERY RARE QUESTIONS (But sometimes asked)
 
@@ -78,3 +83,8 @@ These are asked to test your thinking ability.
 
 20. What would you improve in the next version?
 “Storage, charts, editing transactions, and filtering.”
+
+
+"JavaScript alerts are popup messages shown by the browser using the alert() function. In my 
+Expense Tracker, I can use alerts to validate user input and display messages such as 'Please enter a valid amount' 
+or 'Select a transaction type' before adding the transaction."
